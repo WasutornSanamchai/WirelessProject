@@ -1,0 +1,42 @@
+<!----------------------------------------
+This is the project for Wireless and Mobile Computing Subject, Year 3
+at Faculty of ICT, Mahidol University
+This project can be used to study. 
+It cannot be used for commercial purposes.
+
+Developed by The 3rd Year ICT Students:
+Mr. Nutpapon Limsupavanich ID: 5788217 
+Mr. Wasutorn Sanamchai ID: 5788243 
+Miss. Wipawee Likhitaporn ID: 5788305
+Miss. Supatjana Leardarpajit ID: 5788319
+----------------------------------------->
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>List all Terms - {{subject}}</ion-title>
+      <ion-buttons (click)="goBack()">
+      <ion-icon name="back"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <div *ngFor="let vocab of vocabs">
+        <!-- <div *ngIf="vocab.subject == subject"> -->
+
+        <ion-card>
+          <ion-card-header>
+              <ion-icon name="star-outline"></ion-icon>
+                {{vocab.vocab}}
+          </ion-card-header>
+
+          <ion-card-content>
+            {{vocab.def}}
+          </ion-card-content>
+        </ion-card>
+      <!-- </div> -->
+      </div>
+
+    </ion-list>
+</ion-content>

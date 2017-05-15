@@ -1,0 +1,66 @@
+<!----------------------------------------
+This is the project for Wireless and Mobile Computing Subject, Year 3
+at Faculty of ICT, Mahidol University
+This project can be used to study. 
+It cannot be used for commercial purposes.
+
+Developed by The 3rd Year ICT Students:
+Mr. Nutpapon Limsupavanich ID: 5788217 
+Mr. Wasutorn Sanamchai ID: 5788243 
+Miss. Wipawee Likhitaporn ID: 5788305
+Miss. Supatjana Leardarpajit ID: 5788319
+----------------------------------------->
+<ion-header>
+  <ion-navbar color="dark">
+      <ion-buttons start>
+       <button ion-button icon-only color="royal" (click)="goAbout()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons> 
+    <ion-title>
+        <img alt="logo" height="40" src="img/TermLogoWhite.png" > 
+    </ion-title>
+  </ion-navbar>
+    <ion-searchbar></ion-searchbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div *ngIf="userPhotoURL == null">
+            <ion-card-header>
+                <b>Please Login</b>
+            </ion-card-header>
+            <ion-card-content>
+                If you want your completion statistics saved, you must login<br/><br/>
+                <button ion-button outline (click) = "signInWithFacebook()">Login</button>
+            </ion-card-content>
+        </div>
+        <div *ngIf="userPhotoURL != null">
+            <ion-card-header>
+                <ion-title>Hello, have a nice day.</ion-title> 
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-avatar item-left><img src = "{{userPhotoURL}}"></ion-avatar> {{userProfile}}
+                </ion-item> 
+            </ion-card-content>
+        </div>
+    </ion-card>
+    <ion-card class="suggest">
+        <ion-card-content>
+            Select Year Please
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="Tblack">
+        <ion-card-header color="Twhite">
+            Years
+        </ion-card-header>
+        <ion-list>
+            <button ion-item (click)="chooseYear('1')" > Year 1 </button>
+            <button ion-item (click)="chooseYear('2')" > Year 2 </button>
+            <button ion-item (click)="chooseYear('3')" > Year 3 </button>
+            <button ion-item (click)="chooseYear('4')" > Year 4 </button>
+        </ion-list>
+    </ion-card>
+</ion-content>
+<ion-nav [root]="rootPage"></ion-nav>

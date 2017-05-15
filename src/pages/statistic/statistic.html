@@ -1,0 +1,49 @@
+<!--------------------------------------
+This is the project for Wireless and Mobile Computing Subject, Year 3
+at Faculty of ICT, Mahidol University
+This project can be used to study. 
+It cannot be used for commercial purposes.
+
+Developed by The 3rd Year ICT Students:
+Mr. Nutpapon Limsupavanich ID: 5788217 
+Mr. Wasutorn Sanamchai ID: 5788243 
+Miss. Wipawee Likhitaporn ID: 5788305
+Miss. Supatjana Leardarpajit ID: 5788319
+----------------------------------------->
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+        <img alt="logo" height="40" src="img/TermLogoWhite.png" >
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header class="list">
+            Level Complete
+        </ion-card-header>
+
+        <ion-card-content class="cen">
+            <br>You have complete this part
+            <img src="img/TermIconfly.png">
+        </ion-card-content>
+
+        <ion-card-content class="cen">
+            Number of Incorrect Answer: {{statistic}}
+        </ion-card-content>
+        <ion-card-content class="cen" *ngIf="isAuthenticated">
+            The Previous Statistic: {{prevStat}}
+        </ion-card-content>
+
+        <button ion-item (click)="goSubject()" style="background-color: #e6e6e6">
+           <ion-icon name="arrow-back"></ion-icon> change chapter
+        </button>
+
+        <button ion-item (click)="goHome()" class="list">
+             <ion-icon name="arrow-back"></ion-icon> change subject
+        </button>
+
+
+    </ion-card>
+</ion-content>

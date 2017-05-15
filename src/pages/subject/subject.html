@@ -1,0 +1,59 @@
+<!------------------------------------
+This is the project for Wireless and Mobile Computing Subject, Year 3
+at Faculty of ICT, Mahidol University
+This project can be used to study. 
+It cannot be used for commercial purposes.
+
+Developed by The 3rd Year ICT Students:
+Mr. Nutpapon Limsupavanich ID: 5788217 
+Mr. Wasutorn Sanamchai ID: 5788243 
+Miss. Wipawee Likhitaporn ID: 5788305
+Miss. Supatjana Leardarpajit ID: 5788319
+--------------------------------------->
+<ion-header>
+   <ion-navbar color="dark">
+    <ion-title>{{subject}}</ion-title>
+      <ion-buttons (click)="goBack()">
+      <ion-icon name="back"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <div *ngFor="let vocab of vocabs | async">
+    <div *ngIf="vocab.subject == subject">
+      {{addToArray(Chapters,vocab.chapterNo,vocab.chapterName)}}
+     </div>
+  </div> -->
+
+    <ion-card>
+        <ion-card-header>
+
+        </ion-card-header>
+        <ion-card-content>
+            {{subject}}
+        </ion-card-content>
+        <button ion-button block (click)="goToList()" class="list" >List all terms</button>
+        <ion-card color="dark">
+      <ion-card-header>
+        Chapters
+      </ion-card-header>
+
+      <ion-list>
+        <button ion-item (click)="goToTask(chapter.name)" *ngFor="let chapter of Chapters;">
+          <ion-icon name="unlock" item-left></ion-icon>
+            {{chapter.name}}
+        </button>
+        </ion-list>
+    </ion-card>
+
+    </ion-card>
+
+    <!-- <div *ngFor="let score of scores;">
+
+      {{score.Name}} {{score.Score}}
+
+    </div>
+    {{scores.length}} -->
+</ion-content>

@@ -1,0 +1,36 @@
+<!----------------------------------------
+This is the project for Wireless and Mobile Computing Subject, Year 3
+at Faculty of ICT, Mahidol University
+This project can be used to study. 
+It cannot be used for commercial purposes.
+
+Developed by The 3rd Year ICT Students:
+Mr. Nutpapon Limsupavanich ID: 5788217 
+Mr. Wasutorn Sanamchai ID: 5788243 
+Miss. Wipawee Likhitaporn ID: 5788305
+Miss. Supatjana Leardarpajit ID: 5788319
+----------------------------------------->
+<ion-header>  
+  <ion-navbar>
+    <ion-title>{{ action }} Birthday</ion-title>
+    <ion-buttons end *ngIf="!isNew">
+      <button ion-button (click)="delete()">
+          <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+    <ion-list>
+        <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input text-right type="text" [(ngModel)]="birthday.Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Birthday</ion-label>
+            <ion-datetime displayFormat="MMMM D, YYYY" pickerFormat="MMMM D YYYY" [(ngModel)]="isoDate"></ion-datetime>
+        </ion-item>
+    </ion-list>
+    <button ion-button block (click)="save()">Save</button>
+</ion-content> 
